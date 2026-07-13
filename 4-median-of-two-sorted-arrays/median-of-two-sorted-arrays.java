@@ -6,10 +6,10 @@ class Solution {
         int[] temp = new int[a];
         int i = 0;
         while(b < nums1.length && c < nums2.length){
-            if(nums1[b] == nums2[c] || nums1[b] > nums2[c]){
+            if(nums1[b] >= nums2[c]){
                 temp[i] = nums2[c];
                 c++;
-            }else if(nums2[c] > nums1[b]){
+            }else{
                 temp[i] = nums1[b];
                 b++;
             }

@@ -4,15 +4,15 @@ class Solution {
         int start = 0;
         int end = 0;
         int maxLength = 0;
-        List<Character> list= new ArrayList<Character>(); 
+        Set<Character> set= new HashSet<>(); 
 
         while(end < s.length()){
-            if(!list.contains(s.charAt(end))){
-                list.add(s.charAt(end));
+            if(!set.contains(s.charAt(end))){
+                set.add(s.charAt(end));
                 end++;
-                maxLength=Math.max(maxLength , list.size());
-            } else{
-                list.remove(Character.valueOf(s.charAt(start)));
+                maxLength = Math.max(maxLength, end - start);
+            } else {
+                set.remove(s.charAt(start));
                 start++;
             }
         }
